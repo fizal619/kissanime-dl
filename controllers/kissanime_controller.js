@@ -1,11 +1,12 @@
 'use strict'
 //require express router
 const router = require('express').Router()
+const {getLinks} = require('../models/kissanime')
 
 
 // / route
-router.get('/', function(req, res) {
-    res.send('route /')
+router.get('/', getLinks, function(req, res) {
+  res.json(res.items)
   }) //end /
 
 
